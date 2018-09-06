@@ -1,5 +1,10 @@
 from django.http import HttpResponse
 
+from .models import Movie
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+	f = open("movies.txt", "r")
+	filecontent = f.read()
+	films = filecontent.split("\n")
+
+	return HttpResponse(films)
