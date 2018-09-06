@@ -1,0 +1,7 @@
+ <h1>Movie Titles!</h1>
+ <br/>
+ <ul>
+    {% for a in movies %}
+        <li><a href="{% url 'details' a.id %}">{{ a.title }}</a></li>
+    {% endfor %}
+</ul>
